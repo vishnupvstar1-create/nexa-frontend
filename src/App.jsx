@@ -8,6 +8,7 @@ import CarDetail from './pages/CarDetail';
 import ContactUs from './pages/ContactUs';
 import BookTestDrive from './pages/BookTestDrive';
 import FloatingButton from './components/FloatingButton';
+import AdminDashboard from './pages/AdminDashboard';
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -30,6 +31,7 @@ function App() {
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/car/:modelCd" element={<CarDetail />} />
           <Route path="/test-drive" element={<BookTestDrive />} />
+          <Route path="/admin" element={<AdminDashboard />} />
         </Routes>
       </div>
 
