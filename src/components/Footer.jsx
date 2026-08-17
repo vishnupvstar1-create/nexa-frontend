@@ -21,7 +21,14 @@ function Footer() {
           <ul className="flex flex-col gap-4">
             <li><Link to="/" className="text-gray-500 hover:text-blue-600 dark:hover:text-blue-400 text-sm font-medium transition-colors">Lineup</Link></li>
             <li><Link to="/contact" className="text-gray-500 hover:text-blue-600 dark:hover:text-blue-400 text-sm font-medium transition-colors">Contact Us</Link></li>
-            <li><a href="#" className="text-gray-500 hover:text-blue-600 dark:hover:text-blue-400 text-sm font-medium transition-colors">Book a Test Drive</a></li>
+            <li>
+              <Link 
+                to="/test-drive" 
+                className="text-gray-500 hover:text-blue-600 dark:hover:text-blue-400 text-sm font-medium transition-colors"
+              >
+                Book a Test Drive
+              </Link>
+            </li>
           </ul>
         </div>
 
