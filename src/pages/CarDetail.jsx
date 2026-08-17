@@ -13,7 +13,8 @@ function CarDetail() {
   useEffect(() => {
     // 1. ADD THIS LINE: Instantly scroll to the very top when the page opens!
     window.scrollTo(0, 0);
-    fetch(`http://localhost:5000/api/cars/${modelCd}`)
+    const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+    fetch(`${API_URL}/api/cars/${modelCd}`)
       .then(res => res.json())
       .then(data => {
         setCar(data);
@@ -27,7 +28,7 @@ function CarDetail() {
     setFormStatus('Submitting...');
     // We will use the contact API we built earlier to save this lead!
     try {
-      const response = await fetch('http://localhost:5000/api/contact', {
+      const response = await fetch('${API_URL}/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name: formData.name, email: formData.mobile, message: `Interested in ${car.modelDesc} from ${formData.city}` })
