@@ -4,12 +4,24 @@ import { Link } from 'react-router-dom';
 function CarList() {
   const [cars, setCars] = useState([]);
 
-  useEffect(() => {
+ useEffect(() => {
     const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+    
     fetch(`${API_URL}/api/cars`)
       .then(res => res.json())
-      .then(data => setCars(data))
-      .catch(err => console.error(err));
+      .then(data => {
+        // PROTECTION CHECK: Is the data actually an array of cars?
+        if (Array.isArray(data)) {
+          setCars(data);
+        } else {
+          console.error("Backend returned an error instead of an array:", data);
+          setCars([]); // Fallback to an empty array so .map() doesn't crash!
+        }
+      })
+      .catch(err => {
+        console.error("Network or Fetch error:", err);
+        setCars([]);
+      });
   }, []);
 
   return (
