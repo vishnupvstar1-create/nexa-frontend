@@ -133,12 +133,14 @@ function CarDetail() {
                 {car.modelOverview}
               </p>
 
-              <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-md rounded-3xl p-8 shadow-lg border border-white/60 dark:border-gray-700/50 mb-10">
-                <span className="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400 font-black block mb-2">Starting Ex-Showroom Price</span>
-                <span className="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-400">
-                  ₹{car.exShowroomPrice?.toLocaleString('en-IN')}
-                </span>
-              </div>
+<div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-md rounded-3xl p-6 sm:p-8 shadow-lg border border-white/60 dark:border-gray-700/50 mb-10 overflow-hidden">
+  <span className="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400 font-black block mb-2 truncate">
+    Starting Ex-Showroom Price
+  </span>
+  <span className="text-3xl sm:text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-400 block truncate">
+    ₹{car.exShowroomPrice?.toLocaleString('en-IN')}
+  </span>
+</div>
             </div>
 
             <div className="group relative flex justify-center items-center w-full h-[300px] md:h-[450px]">
